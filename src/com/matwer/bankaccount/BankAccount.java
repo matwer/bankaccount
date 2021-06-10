@@ -48,13 +48,13 @@ public class BankAccount {
 	}
 	
 	public void checkDep(double dep) {
-		System.out.println("Depositing " + dep);
+		System.out.println("Depositing " + dep + " into checking");
 		this.checkingBal += dep;
 		totalBalance += dep;
 	}
 	
 	public void savingsDep (double dep ) {
-		System.out.println("Depositing " + dep);
+		System.out.println("Depositing " + dep + " into savings");
 		this.savings += dep;
 		totalBalance += dep;
 	}
@@ -64,9 +64,9 @@ public class BankAccount {
 			System.out.println("Insufficient funds. Unable to withdraw " + wd);
 		} else {
 			this.checkingBal -= wd;
-			System.out.println("Withdrawing " + wd);
+			System.out.println("Withdrawing " + wd + " from checking");
+			totalBalance -= wd;
 		}
-		totalBalance -= wd;
 	}
 	
 	public void withdrawSavings (double wd) {
@@ -74,8 +74,8 @@ public class BankAccount {
 			System.out.println("Insufficient funds. Unable to withdraw " + wd);
 		} else {
 			this.savings -= wd;
-			System.out.println("Withdrawing " + wd);
+			System.out.println("Withdrawing " + wd + " from savings");
+			totalBalance -= wd;
 		}
-		totalBalance -= wd;
 	}
 }
