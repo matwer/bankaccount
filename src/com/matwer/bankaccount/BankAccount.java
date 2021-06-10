@@ -6,8 +6,8 @@ public class BankAccount {
 	
 	// declare member variables
 	private String accountNum = "";
-	private double checkingBal;
-	private double savings;
+	private double checkingBal = 0.0;
+	private double savings = 0.0;
 	
 	private static int totAccts;
 	private static double totalBalance;
