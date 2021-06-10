@@ -27,12 +27,14 @@ public class BankAccount {
 		return accountNum;
 	}
 
-	public double getCheckingBal() {
-		return checkingBal;
+	public String getCheckingBal() {
+		String checking = String.format("%.2f", checkingBal);
+		return checking;
 	}
 
-	public double getSavings() {
-		return savings;
+	public String getSavings() {
+		String saving = String.format("%.2f", savings);
+		return saving;
 	}
 
 	public String getAcctNum() {
@@ -43,18 +45,21 @@ public class BankAccount {
 		return totAccts;
 	}
 
-	public static double getTotalBalance() {
-		return totalBalance;
+	public static String getTotalBalance() {
+		String total = String.format("%.2f", totalBalance);
+		return total;
 	}
 	
 	public void checkDep(double dep) {
-		System.out.println("Depositing " + dep + " into checking");
+		String deposit = String.format("%.2f", dep);
+		System.out.println("Depositing " + deposit + " into checking");
 		this.checkingBal += dep;
 		totalBalance += dep;
 	}
 	
 	public void savingsDep (double dep ) {
-		System.out.println("Depositing " + dep + " into savings");
+		String deposit = String.format("%.2f", dep);
+		System.out.println("Depositing " + deposit + " into savings");
 		this.savings += dep;
 		totalBalance += dep;
 	}
@@ -64,7 +69,8 @@ public class BankAccount {
 			System.out.println("Insufficient funds. Unable to withdraw " + wd);
 		} else {
 			this.checkingBal -= wd;
-			System.out.println("Withdrawing " + wd + " from checking");
+			String withdrawal = String.format("%.2f", wd);
+			System.out.println("Withdrawing " + withdrawal + " from checking");
 			totalBalance -= wd;
 		}
 	}
@@ -74,7 +80,8 @@ public class BankAccount {
 			System.out.println("Insufficient funds. Unable to withdraw " + wd);
 		} else {
 			this.savings -= wd;
-			System.out.println("Withdrawing " + wd + " from savings");
+			String withdrawal = String.format("%.2f", wd);
+			System.out.println("Withdrawing " + withdrawal + " from savings");
 			totalBalance -= wd;
 		}
 	}
